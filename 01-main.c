@@ -62,7 +62,6 @@ int main(int argc, char *argv[])
 
 	if (!(isatty(STDIN_FILENO)))
 	{
-		print(1, "hie\n");
 		get_input(app_data);
 		execute_command(app_data);
 		free_all_data(app_data);
