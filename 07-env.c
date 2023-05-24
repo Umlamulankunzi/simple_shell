@@ -23,7 +23,7 @@ void _setenv(App_Data *app_data)
 
 	if (app_data->parsed_args[1] == NULL || app_data->parsed_args[2] == NULL)
 	{
-		print(STDERR_FILENO, "%s: %d: setenv: Invalid key or value",
+		print(STDERR_FILENO, "%s: %d: setenv: Invalid key or value\n",
 			app_data->app_name, app_data->line_count);
 		return;
 	}
