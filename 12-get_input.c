@@ -56,6 +56,9 @@ int execute_command(App_Data *app_data)
 
 	app_data->line_count++;
 
+	if (app_data->parsed_args[0] == NULL)
+		return (0);
+
 	if (is_builtin(app_data->parsed_args[0]))
 	{
 		execute_builtin(app_data);
