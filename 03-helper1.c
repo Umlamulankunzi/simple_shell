@@ -145,8 +145,14 @@ ssize_t _getline(char **lineptr, size_t *n, int fd)
  */
 char *_strdup_(const char *str)
 {
-	size_t len = strlen(str) + 1; /* Include space for null terminator */
-	char *new_str = (char *)malloc(len * sizeof(char));
+	size_t len;
+	char *new_str;
+
+	if (str == NULL)
+		return (NULL);
+
+	len = strlen(str) + 1; /* Include space for null terminator */
+	new_str = (char *)malloc(len * sizeof(char));
 
 	if (new_str == NULL)
 		return (NULL); /* Error: unable to allocate memory */

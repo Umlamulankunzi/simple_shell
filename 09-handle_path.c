@@ -54,6 +54,9 @@ char *get_cmd_path(Node **env, char *cmd)
 	char *path_dir;
 	char *cmd_path = NULL;
 
+	if (path == NULL)
+		return (NULL);
+
 	if (is_executable(cmd))
 	{
 		free(path_ptr);

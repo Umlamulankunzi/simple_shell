@@ -52,14 +52,15 @@ void _unsetenv(App_Data *app_data)
 
 	if (app_data->parsed_args[1] == NULL)
 	{
-		print(STDERR_FILENO, "%s: %d: unsetenv: Invalid name",
+		print(STDERR_FILENO, "%s: %d: unsetenv: Invalid name\n",
 			app_data->app_name, app_data->line_count);
+		return;
 	}
 
 	node = find_node(app_data->env_head, app_data->parsed_args[1]);
 
 	if (node == NULL)
-		print(STDERR_FILENO, "%s: %d: unsetenv: not found",
+		print(STDERR_FILENO, "%s: %d: unsetenv: not found\n",
 			app_data->app_name, app_data->line_count);
 
 	else
